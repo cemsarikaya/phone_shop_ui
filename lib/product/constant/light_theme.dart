@@ -6,10 +6,11 @@ class LighTheme {
   LighTheme() {
     theme = ThemeData(
       appBarTheme: const AppBarTheme(
-        color: Colors.transparent,
+        color: Colors.black,
+        centerTitle: true,
         titleTextStyle: TextStyle(fontSize: 35, fontWeight: FontWeight.w400),
       ),
-      scaffoldBackgroundColor: Colors.white.withOpacity(0.8),
+      scaffoldBackgroundColor: Colors.white.withOpacity(0.9),
       colorScheme: const ColorScheme.light(),
     );
   }

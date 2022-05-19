@@ -6,6 +6,7 @@ class PhoneProvider extends ChangeNotifier {
   final IPhoneService phoneService;
 
   List<PhoneModel> resources = [];
+
   bool isLoading = false;
 
   void _changeLoading() {
@@ -20,6 +21,7 @@ class PhoneProvider extends ChangeNotifier {
   Future<void> fetch() async {
     _changeLoading();
     resources = (await phoneService.fetchResourceItem()) ?? [];
+
     _changeLoading();
   }
 }

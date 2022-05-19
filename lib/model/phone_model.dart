@@ -7,6 +7,7 @@ class PhoneModel {
   String? imageWhite;
   String? internalMemory;
   String? name;
+  String? prI;
   String? price;
   String? ramCapacity;
   String? screenSize;
@@ -20,6 +21,7 @@ class PhoneModel {
       this.imageWhite,
       this.internalMemory,
       this.name,
+      this.prI,
       this.price,
       this.ramCapacity,
       this.screenSize});
@@ -33,6 +35,7 @@ class PhoneModel {
     imageWhite = json['image_white'];
     internalMemory = json['internal_memory'];
     name = json['name'];
+    prI = json['pr_i'];
     price = json['price '];
     ramCapacity = json['ram_capacity'];
     screenSize = json['screen_size'];
@@ -48,6 +51,7 @@ class PhoneModel {
     data['image_white'] = imageWhite;
     data['internal_memory'] = internalMemory;
     data['name'] = name;
+    data['pr_i'] = prI;
     data['price '] = price;
     data['ram_capacity'] = ramCapacity;
     data['screen_size'] = screenSize;
