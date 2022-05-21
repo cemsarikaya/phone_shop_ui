@@ -73,7 +73,9 @@ class _PhoneScreenViewState extends State<PhoneScreenView> with ProjectDioMixin 
             child: Card(
               shadowColor: cardShadowColor,
               elevation: 5,
-              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+              ),
               child: Column(
                 children: [
                   Expanded(
