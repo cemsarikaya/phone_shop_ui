@@ -5,6 +5,7 @@ import 'package:phone_shop_app/product/constant/project_dio.dart';
 import 'package:phone_shop_app/product/constant/project_items.dart';
 import 'package:phone_shop_app/product/widget/phone_slider.dart';
 import 'package:phone_shop_app/service/phone_service.dart';
+import 'package:phone_shop_app/view/phone_detail_screen.dart';
 import 'package:phone_shop_app/viewModel/phone_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -67,9 +68,12 @@ class _PhoneScreenViewState extends State<PhoneScreenView> with ProjectDioMixin 
       itemCount: items.length,
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
-          onTap: () {},
+          onTap: () async {
+            await Navigator.push(
+                context, MaterialPageRoute(builder: (context) => PhoneDetailScreenView(path: [items[index]])));
+          },
           child: Padding(
-            padding: PaddindUtility().paddingCard,
+            padding: PaddindUtility().paddingGeneral,
             child: Card(
               shadowColor: cardShadowColor,
               elevation: 5,
@@ -89,7 +93,7 @@ class _PhoneScreenViewState extends State<PhoneScreenView> with ProjectDioMixin 
                     style: Theme.of(context).textTheme.subtitle1,
                   ),
                   Padding(
-                    padding: PaddindUtility().paddinBottom,
+                    padding: PaddindUtility().paddinTopBottom,
                     child: Text(
                       '${items[index].prI}',
                       style: Theme.of(context).textTheme.subtitle1?.copyWith(fontWeight: FontWeight.bold),
@@ -112,7 +116,7 @@ class PhoneBasketBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double iconSize = 30;
+    double iconSize = 25;
     return IconButton(
       icon: Icon(Icons.shopping_basket_sharp, size: iconSize),
       onPressed: () {},

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phone_shop_app/product/constant/light_theme.dart';
 import 'package:phone_shop_app/view/phone_detail_screen.dart';
+import 'package:phone_shop_app/view/phone_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: LighTheme().theme,
-      home: const PhoneDetailScreenView(),
+      home: const PhoneScreenView(),
     );
   }
 }
