@@ -14,6 +14,7 @@ class PhoneDetailScreenView extends StatefulWidget {
 
 class _PhoneDetailScreenViewState extends State<PhoneDetailScreenView> {
   List<PhoneModel> resources = [];
+
   @override
   void initState() {
     super.initState();
@@ -71,7 +72,8 @@ class _PhoneDetailScreenViewState extends State<PhoneDetailScreenView> {
                 Padding(
                   padding: PaddindUtility().paddingText,
                   child: FeaturesCard(resources: resources),
-                )
+                ),
+                const CounterCard()
               ],
             ),
           ),
@@ -80,7 +82,7 @@ class _PhoneDetailScreenViewState extends State<PhoneDetailScreenView> {
               padding: PaddindUtility().paddingText,
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 const Text('Satın Al', style: kdeatilsText),
-                Text(resources.first.prI.toString(), style: kdeatilsText),
+                Text('${resources.first.prI.toString()} TL', style: kdeatilsText),
               ]),
             ),
           )
@@ -109,7 +111,6 @@ class FeaturesCard extends StatelessWidget {
         featuresText(text: 'Ram Kapasitesi : ${resources.first.ramCapacity}'),
         featuresText(text: 'Ön (Selfie) Kamera :${resources.first.frontCamera}'),
         featuresText(text: 'Kamera Çözünürlüğü :${resources.first.cameraResolution}'),
-        const CounterCard()
       ],
     );
   }
@@ -123,10 +124,29 @@ class FeaturesCard extends StatelessWidget {
   }
 }
 
-class CounterCard extends StatelessWidget {
+class CounterCard extends StatefulWidget {
   const CounterCard({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<CounterCard> createState() => _CounterCardState();
+}
+
+class _CounterCardState extends State<CounterCard> {
+  int _counter = 0;
+
+  void _addCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _removeCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -135,15 +155,23 @@ class CounterCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          counterElevatedButton(icon: Icons.add, onPress: () {}),
+          counterElevatedButton(
+              icon: Icons.add,
+              onPress: () {
+                _addCounter();
+              }),
           Padding(
             padding: PaddindUtility().paddingGeneral,
-            child: const Text(
-              '1',
+            child: Text(
+              '$_counter',
               style: kfeatureText,
             ),
           ),
-          counterElevatedButton(icon: Icons.remove, onPress: () {}),
+          counterElevatedButton(
+              icon: Icons.remove,
+              onPress: () {
+                _removeCounter();
+              }),
         ],
       ),
     );

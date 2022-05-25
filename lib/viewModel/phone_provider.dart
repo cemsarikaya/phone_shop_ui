@@ -21,7 +21,16 @@ class PhoneProvider extends ChangeNotifier {
   Future<void> fetch() async {
     _changeLoading();
     resources = (await phoneService.fetchResourceItem()) ?? [];
-
     _changeLoading();
+  }
+
+  int counter = 0;
+
+  void addCounter() {
+    counter++;
+  }
+
+  void removeCounter() {
+    counter--;
   }
 }

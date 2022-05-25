@@ -95,7 +95,7 @@ class _PhoneScreenViewState extends State<PhoneScreenView> with ProjectDioMixin 
                   Padding(
                     padding: PaddindUtility().paddinTopBottom,
                     child: Text(
-                      '${items[index].prI}',
+                      '${items[index].prI} TL',
                       style: Theme.of(context).textTheme.subtitle1?.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),

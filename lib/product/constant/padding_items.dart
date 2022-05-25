@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class PaddindUtility {
   final paddingTop = const EdgeInsets.only(top: 10);
-  final paddingCounterButton = const EdgeInsets.only(top: 30);
+  final paddingCounterButton = const EdgeInsets.only(top: 30, right: 15);
   final paddinTopBottom = const EdgeInsets.only(bottom: 5, top: 2);
   final paddingIcon = const EdgeInsets.only(right: 13);
   final paddingText = const EdgeInsets.only(right: 15, left: 30);

@@ -7,7 +7,7 @@ class PhoneModel {
   String? imageWhite;
   String? internalMemory;
   String? name;
-  String? prI;
+  double? prI;
   String? price;
   String? ramCapacity;
   String? screenSize;
