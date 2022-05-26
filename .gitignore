@@ -10,6 +10,7 @@
 .svn/
 migrate_working_dir/
 
+
 # IntelliJ related
 *.iml
 *.ipr
@@ -31,8 +32,9 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-/lib/model/image_model.dart
-/lib/product/constant/project_dio.dart
+/lib/image_model.dart
+/lib/project_dio.dart
+
 
 
 # Web related

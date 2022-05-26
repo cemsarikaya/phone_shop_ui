@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phone_shop_app/model/phone_model.dart';
 import 'package:phone_shop_app/product/constant/padding_items.dart';
-import 'package:phone_shop_app/product/constant/project_dio.dart';
+import 'package:phone_shop_app/project_dio.dart';
 import 'package:phone_shop_app/product/constant/project_items.dart';
 import 'package:phone_shop_app/product/widget/phone_slider.dart';
 import 'package:phone_shop_app/service/phone_service.dart';

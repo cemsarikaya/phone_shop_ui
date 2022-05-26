@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:phone_shop_app/model/image_model.dart';
+import 'package:phone_shop_app/image_model.dart';
 
 class PhoneSlider extends StatelessWidget {
   const PhoneSlider({
