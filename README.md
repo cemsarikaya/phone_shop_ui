@@ -2,6 +2,9 @@
 
 A new Flutter project.
 
+<img src = "https://github.com/cemsarikaya/phone_shop_ui/blob/master/assets/gif/phone_app.gif?raw=true" width="250">
+
+
 
 ## Getting Started
 
