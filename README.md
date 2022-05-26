@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-<img src = "https://github.com/cemsarikaya/phone_shop_ui/blob/master/assets/gif/phone_app.gif?raw=true" width="50%">
+<img src = "https://github.com/cemsarikaya/phone_shop_ui/blob/master/assets/gif/phone_app.gif?raw=true" width="85%">
 
 
 
