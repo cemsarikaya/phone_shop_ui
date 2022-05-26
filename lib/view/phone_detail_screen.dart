@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:phone_shop_app/model/color_model.dart';
 import 'package:phone_shop_app/model/phone_model.dart';
 import 'package:phone_shop_app/product/constant/padding_items.dart';
 import 'package:phone_shop_app/product/constant/project_items.dart';
 import 'package:phone_shop_app/product/constant/text_style_items.dart';
 import 'package:phone_shop_app/product/widget/color_change.dart';
+import 'package:phone_shop_app/product/widget/counter_card.dart';
+import 'package:phone_shop_app/product/widget/features_card.dart';
 
 class PhoneDetailScreenView extends StatefulWidget {
   final List<PhoneModel> path;
@@ -24,9 +27,6 @@ class _PhoneDetailScreenViewState extends State<PhoneDetailScreenView> {
 
   @override
   Widget build(BuildContext context) {
-    Color changeBlack = const Color.fromARGB(255, 25, 25, 25);
-    Color changeBlue = const Color.fromARGB(255, 57, 131, 192);
-    Color changeWhite = const Color.fromARGB(255, 237, 237, 237);
     double containerSize = 0.82;
     double imageSize = 0.35;
 
@@ -61,14 +61,13 @@ class _PhoneDetailScreenViewState extends State<PhoneDetailScreenView> {
                   ),
                 ),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ColorChange(color: changeBlack),
-                    ColorChange(color: changeBlue),
-                    ColorChange(color: changeWhite),
-                  ],
-                ),
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: colorList
+                        .map((Color color) => ColorChange(
+                              color: color,
+                            ))
+                        .toList()),
                 Padding(
                   padding: PaddindUtility().paddingText,
                   child: FeaturesCard(resources: resources),
@@ -88,100 +87,6 @@ class _PhoneDetailScreenViewState extends State<PhoneDetailScreenView> {
           )
         ],
       ),
-    );
-  }
-}
-
-class FeaturesCard extends StatelessWidget {
-  const FeaturesCard({
-    Key? key,
-    required this.resources,
-  }) : super(key: key);
-
-  final List<PhoneModel> resources;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        featuresText(text: 'Dahili Hafıza : ${resources.first.internalMemory}'),
-        featuresText(text: 'Ekran Boyutu : ${resources.first.screenSize}'),
-        featuresText(text: 'Pil Gücü : ${resources.first.batteryPower}'),
-        featuresText(text: 'Ram Kapasitesi : ${resources.first.ramCapacity}'),
-        featuresText(text: 'Ön (Selfie) Kamera :${resources.first.frontCamera}'),
-        featuresText(text: 'Kamera Çözünürlüğü :${resources.first.cameraResolution}'),
-      ],
-    );
-  }
-
-//'Dahili Hafıza : ${resources.first.internalMemory}'
-  Text featuresText({required String text}) {
-    return Text(
-      text,
-      style: kfeatureText,
-    );
-  }
-}
-
-class CounterCard extends StatefulWidget {
-  const CounterCard({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<CounterCard> createState() => _CounterCardState();
-}
-
-class _CounterCardState extends State<CounterCard> {
-  int _counter = 0;
-
-  void _addCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _removeCounter() {
-    setState(() {
-      _counter--;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: PaddindUtility().paddingCounterButton,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          counterElevatedButton(
-              icon: Icons.add,
-              onPress: () {
-                _addCounter();
-              }),
-          Padding(
-            padding: PaddindUtility().paddingGeneral,
-            child: Text(
-              '$_counter',
-              style: kfeatureText,
-            ),
-          ),
-          counterElevatedButton(
-              icon: Icons.remove,
-              onPress: () {
-                _removeCounter();
-              }),
-        ],
-      ),
-    );
-  }
-
-  SizedBox counterElevatedButton({required IconData icon, required Function() onPress}) {
-    return SizedBox(
-      height: 40,
-      width: 50,
-      child: ElevatedButton(onPressed: onPress, child: Icon(icon)),
     );
   }
 }

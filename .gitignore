@@ -31,6 +31,9 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+/lib/model/image_model
+/lib/product/constant/project_dio.dart
+
 
 # Web related
 lib/generated_plugin_registrant.dart
@@ -45,3 +48,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+/model/image_model.dart
+/product/constant/project_dio.dart

@@ -29,9 +29,7 @@ class _ColorChangeState extends State<ColorChange> {
               height: 24,
               width: 24,
               decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.grey,
-                ),
+                border: Border.all(color: Colors.grey, width: 1),
                 shape: BoxShape.circle,
               ),
               child: DecoratedBox(decoration: BoxDecoration(color: widget.color, shape: BoxShape.circle)),

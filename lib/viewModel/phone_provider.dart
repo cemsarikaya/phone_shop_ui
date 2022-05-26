@@ -23,14 +23,4 @@ class PhoneProvider extends ChangeNotifier {
     resources = (await phoneService.fetchResourceItem()) ?? [];
     _changeLoading();
   }
-
-  int counter = 0;
-
-  void addCounter() {
-    counter++;
-  }
-
-  void removeCounter() {
-    counter--;
-  }
 }
