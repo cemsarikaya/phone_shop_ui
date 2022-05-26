@@ -31,7 +31,7 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-/lib/model/image_model
+/lib/model/image_model.dart
 /lib/product/constant/project_dio.dart
 
 
@@ -49,5 +49,3 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-/model/image_model.dart
-/product/constant/project_dio.dart
